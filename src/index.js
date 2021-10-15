@@ -13,12 +13,14 @@ app.listen(app.get("port"), () => {
 })
 
 var a = [];
+var v = [];
 var index;
 var pruebag;
 var pruebap = true;
 var count = 0;
-
-//FUNCIONES
+var c = true;
+var limpieza
+    //FUNCIONES
 
 function eliminador(edif, z) {
 
@@ -31,6 +33,7 @@ function eliminador(edif, z) {
 
 
             var eliminacion = edif.splice(i, 1);
+            c = false;
             prueba = true;
 
 
@@ -78,6 +81,15 @@ function actualizar(a, z, array) {
 }
 
 
+function clean(a) {
+
+    limpieza = a.filter(function(d) {
+        return d != null;
+    });
+
+    return true;
+}
+
 
 //MÉTODOS CASA
 
@@ -113,19 +125,14 @@ var i = 0;
 
 app.post("/controlador/casa", function(req, res) {
 
+    a[i] = req.body;
+    i = i + 1;
 
+    clean(a)
 
-    if (a[i - 1] == null) {
-        a[i - 1] = req.body;
-
-    } else {
-        a[i] = req.body;
-        i = i + 1;
-    }
-
-
+    a = limpieza;
     count = count + 1;
-    res.send({ a });
+    res.send(a);
 
 
 })
@@ -208,13 +215,12 @@ var edif = [{}];
 
 app.post("/controlador/edificio", function(req, res) {
 
-    if (edif[e - 1] == null) {
-        edif[e - 1] = req.body;
 
-    } else {
-        edif[e] = req.body;
-        e = e + 1;
-    }
+    edif[e] = req.body;
+    e = e + 1;
+
+    clean(edif);
+    edif = limpieza;
 
     count = count + 1;
     res.send({ edif });
@@ -302,14 +308,12 @@ var o = 0;
 
 app.post("/controlador/apt", function(req, res) {
 
-    if (apt[o - 1] == null) {
-        apt[o - 1] = req.body;
 
-    } else {
-        apt[o] = req.body;
-        o = o + 1;
-    }
+    apt[o] = req.body;
+    o = o + 1;
 
+    clean(apt);
+    apt = limpieza;
 
 
     count = count + 1;
@@ -392,17 +396,12 @@ var u = 0;
 
 app.post("/controlador/par", function(req, res) {
 
-    if (par[u - 1] == null) {
-        par[u - 1] = req.body;
 
-    } else {
-        par[u] = req.body;
-        u = u + 1;
-    }
+    par[u] = req.body;
+    u = u + 1;
 
-
-
-
+    clean(par);
+    par = limpieza;
 
     res.send({ par });
 
@@ -479,16 +478,12 @@ var r = 0;
 
 app.post("/controlador/zcomercio", function(req, res) {
 
-    if (zcomercio[r - 1] == null) {
-        zcomercio[r - 1] = req.body;
 
-    } else {
-        zcomercio[r] = req.body;
-        r = r + 1;
-    }
+    zcomercio[r] = req.body;
+    r = r + 1;
 
-
-
+    clean(zcomercio);
+    zcomercio = limpieza;
 
     count = count + 1;
     res.send({ zcomercio });
@@ -575,15 +570,12 @@ var q = 0;
 
 app.post("/controlador/pt", function(req, res) {
 
-    if (pt[q - 1] == null) {
-        pt[q - 1] = req.body;
 
-    } else {
-        pt[q] = req.body;
-        q = q + 1;
-    }
+    pt[q] = req.body;
+    q = q + 1;
 
-
+    clean(pt);
+    pt = limpieza;
 
     count = count + 1;
     res.send({ pt });
@@ -666,15 +658,12 @@ var s = 0;
 
 app.post("/controlador/carretera", function(req, res) {
 
-    if (carretera[s - 1] == null) {
-        carretera[s - 1] = req.body;
 
-    } else {
-        carretera[s] = req.body;
-        s = s + 1;
-    }
+    carretera[s] = req.body;
+    s = s + 1;
 
-
+    clean(carretera);
+    carretera = limpieza;
 
 
 
