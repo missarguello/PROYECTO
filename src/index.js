@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require('morgan')
 
-//SERVIDOR Y MIDDLEWARS
+
 app.set("port", 3000);
 app.use(morgan("tiny"))
 app.use(express.json());
