@@ -20,7 +20,6 @@ var pruebap = true;
 var count = 0;
 var c = true;
 var limpieza
-    //FUNCIONES
 
 function eliminador(edif, z) {
 
@@ -91,13 +90,6 @@ function clean(a) {
 }
 
 
-//MÉTODOS CASA
-
-//GET BIENVENIDA
-
-
-
-
 
 app.get("/:nombre?/:apellido?", function(req, res) {
 
@@ -119,8 +111,6 @@ app.get("/:nombre?/:apellido?", function(req, res) {
 
 })
 
-//POST ENTRADA DE DATOS
-
 var i = 0;
 
 app.post("/controlador/casa", function(req, res) {
@@ -140,7 +130,6 @@ app.post("/controlador/casa", function(req, res) {
 var z;
 var array = {};
 
-//GET BUSCA UNA CASA POR SU ID
 
 app.get("/controlador/casa/:id", function(req, res) {
 
@@ -155,8 +144,6 @@ app.get("/controlador/casa/:id", function(req, res) {
     res.end();
 
 })
-
-//PUT CASA
 
 app.put("/controlador/casa", function(req, res) {
 
@@ -178,7 +165,6 @@ app.put("/controlador/casa", function(req, res) {
 
 })
 
-//DELETE CASA
 app.delete("/controlador/casa/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -207,11 +193,9 @@ app.delete("/controlador/casa/:id", function(req, res) {
 
 })
 
-//METODOS-EDIFICIO
+
 var e = 0;
 var edif = [{}];
-
-//POST
 
 app.post("/controlador/edificio", function(req, res) {
 
@@ -228,9 +212,6 @@ app.post("/controlador/edificio", function(req, res) {
 
 });
 
-
-//GET
-
 app.get("/controlador/edificio/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -246,7 +227,7 @@ app.get("/controlador/edificio/:id", function(req, res) {
 
 })
 
-//PUT edificio
+
 
 app.put("/controlador/edificio", function(req, res) {
 
@@ -274,10 +255,6 @@ app.put("/controlador/edificio", function(req, res) {
 
 var prueba = true;
 
-//DELETE edificio
-
-
-
 
 app.delete("/controlador/edificio/:id", function(req, res) {
 
@@ -302,7 +279,7 @@ app.delete("/controlador/edificio/:id", function(req, res) {
 
 })
 
-//APT
+
 var apt = [{}];
 var o = 0;
 
@@ -325,8 +302,6 @@ app.post("/controlador/apt", function(req, res) {
 var z;
 var array = {};
 
-//GET BUSCA UNA APT POR SU ID
-
 app.get("/controlador/apt/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -342,8 +317,6 @@ app.get("/controlador/apt/:id", function(req, res) {
 
 
 })
-
-//PUT APT
 
 app.put("/controlador/apt", function(req, res) {
 
@@ -365,7 +338,6 @@ app.put("/controlador/apt", function(req, res) {
 
 })
 
-//DELETE APT
 app.delete("/controlador/apt/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -388,7 +360,6 @@ app.delete("/controlador/apt/:id", function(req, res) {
 
 })
 
-//PARQUESS
 
 var par = [{}];
 var u = 0;
@@ -410,7 +381,6 @@ app.post("/controlador/par", function(req, res) {
 var z;
 var array = {};
 
-//GET BUSCA UNA PAR POR SU ID
 
 app.get("/controlador/par/:id", function(req, res) {
 
@@ -428,7 +398,6 @@ app.get("/controlador/par/:id", function(req, res) {
 
 })
 
-//PUT PAR
 
 app.put("/controlador/par", function(req, res) {
 
@@ -451,7 +420,6 @@ app.put("/controlador/par", function(req, res) {
 
 })
 
-//DELETE PAR
 app.delete("/controlador/par/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -471,7 +439,6 @@ app.delete("/controlador/par/:id", function(req, res) {
 
 })
 
-//ZONA COMERCIAL
 
 var zcomercio = [{}];
 var r = 0;
@@ -494,7 +461,6 @@ app.post("/controlador/zcomercio", function(req, res) {
 var z;
 var array = {};
 
-//GET BUSCA UNA ZCOMERCIO POR SU ID
 
 app.get("/controlador/zcomercio/:id", function(req, res) {
 
@@ -512,7 +478,6 @@ app.get("/controlador/zcomercio/:id", function(req, res) {
 
 })
 
-//PUT ZCOMERCIO
 app.put("/controlador/zcomercio", function(req, res) {
 
     z = parseInt(req.body.id);
@@ -532,12 +497,11 @@ app.put("/controlador/zcomercio", function(req, res) {
     }
 
 
-    // res.send({ a })
 
 
 })
 
-//DELETE ZCOMERCIO
+
 app.delete("/controlador/zcomercio/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -563,7 +527,7 @@ app.delete("/controlador/zcomercio/:id", function(req, res) {
 })
 
 
-//PUENTE
+
 
 var pt = [{}];
 var q = 0;
@@ -586,7 +550,7 @@ app.post("/controlador/pt", function(req, res) {
 var z;
 var array = {};
 
-//GET BUSCA UNA APT POR SU ID
+
 
 app.get("/controlador/pt/:id", function(req, res) {
 
@@ -604,7 +568,6 @@ app.get("/controlador/pt/:id", function(req, res) {
 
 })
 
-//PUT APT
 
 app.put("/controlador/pt", function(req, res) {
 
@@ -628,7 +591,6 @@ app.put("/controlador/pt", function(req, res) {
 
 })
 
-//DELETE APT
 app.delete("/controlador/pt/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -651,7 +613,7 @@ app.delete("/controlador/pt/:id", function(req, res) {
 
 })
 
-//CARRETERA
+
 
 var carretera = [{}];
 var s = 0;
@@ -676,7 +638,7 @@ app.post("/controlador/carretera", function(req, res) {
 var z;
 var array = {};
 
-//GET BUSCA UNA APT POR SU ID
+
 
 app.get("/controlador/carretera/:id", function(req, res) {
 
@@ -694,7 +656,7 @@ app.get("/controlador/carretera/:id", function(req, res) {
 
 })
 
-//PUT APT
+
 
 app.put("/controlador/carretera", function(req, res) {
 
@@ -720,7 +682,6 @@ app.put("/controlador/carretera", function(req, res) {
 
 })
 
-//DELETE APT
 app.delete("/controlador/carretera/:id", function(req, res) {
 
     z = parseInt(req.params.id);
@@ -743,8 +704,6 @@ app.delete("/controlador/carretera/:id", function(req, res) {
 
 })
 
-
-//CREADAS
 
 app.get("/controlador/creadas/count", (req, res) => {
 
